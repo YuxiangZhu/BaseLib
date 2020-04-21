@@ -1,0 +1,60 @@
+//统一配置一些共用参数
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+//导入定义
+apply from: '../versions.gradle'//因为dependencies都是用于module下面，当前的层级结构，config.gradle就在module上一层中
+
+//创建一个dependencies管理的文件，可以在各自module的build.gradle文件里，apply form 该文件的相对路径(包含fileName)，如 apply form ../dependencies.gradle
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.fragment:fragment-ktx:1.2.4'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    //Common UI Libs
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //<editor-folder desc="jetPack libs">
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+    kapt "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+
+    implementation 'androidx.room:room-ktx:2.2.5'
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+//针对所有compiler java代码用这个annotationProcessor
+    kapt "androidx.room:room-compiler:2.2.5"//kotlin的用这个kapt
+
+    implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
+    implementation 'androidx.paging:paging-common-ktx:2.1.2'
+
+    implementation 'androidx.work:work-runtime-ktx:2.3.4'
+    //注意配置navigation版本号的时候，project下的build.gradle的class path也需要同步navigation的版本号配置
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    //</editor-folder>
+
+    //<editor-folder desc="第三方开源库">
+
+    //utils工具库
+    implementation 'com.blankj:utilcode:1.26.0'
+
+    //</editor-folder>
+
+    //<editor-folder desc="test libs">
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'androidx.test.ext:junit-ktx:1.1.1'
+    androidTestImplementation 'androidx.test:core:1.2.0'
+    androidTestImplementation 'androidx.test:core-ktx:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //</editor-folder>
+}

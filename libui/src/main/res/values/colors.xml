@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorPrimaryLight">#FFECB3</color>
+    <color name="colorAccent">#03A9F4</color>
+    <color name="colorPrimaryText">#333333</color>
+    <color name="colorSecondaryText">#666666</color>
+    <color name="colorIcons">#333333</color>
+    <color name="colorDivider">#BDBDBD</color>
+
+    <!--colors-->
+    <color name="colorHighLight">#ff7354</color>
+    <color name="colorWindowBg">#f1f4f9</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRippleWhite">#F0F5FC</color>
+    <color name="colorTitleBlack">#333333</color>
+    <color name="colorTextPrimary">#494c5b</color>
+    <color name="colorTextSecond">#515462</color>
+    <color name="colorSubTitleBlack">#666666</color>
+    <color name="colorSubTitleGrey">#999999</color>
+    <color name="colorHintGrey">#CCCCCC</color>
+    <color name="colorLineGrey">#E4E4E4</color>
+    <color name="colorDisableOrange">#66FF8C1A</color>
+    <color name="colorTextMonthBg">#267f8bd5</color>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="info"
+            type="com.ly.traffic.app.libui.calendar.MonthEntity" />
+
+        <variable
+            name="adapter"
+            type="com.ly.traffic.app.libui.calendar.DayAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_item_month_cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
+            android:text="@{info.title}"
+            android:textColor="@color/colorTextSecond"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2020年03月" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sun_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="日"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_mon_item_month_cal"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_mon_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="一"
+            android:textColor="@color/colorSubTitleBlack"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toStartOf="@id/tv_tue_item_month_cal"
+            app:layout_constraintStart_toEndOf="@id/tv_sun_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_tue_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="二"
+            android:textColor="@color/colorSubTitleBlack"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toStartOf="@id/tv_wen_item_month_cal"
+            app:layout_constraintStart_toEndOf="@id/tv_mon_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_wen_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="三"
+            android:textColor="@color/colorSubTitleBlack"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toStartOf="@id/tv_thu_item_month_cal"
+            app:layout_constraintStart_toEndOf="@id/tv_tue_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_thu_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="四"
+            android:textColor="@color/colorSubTitleBlack"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toStartOf="@id/tv_fri_item_month_cal"
+            app:layout_constraintStart_toEndOf="@id/tv_wen_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_fri_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="五"
+            android:textColor="@color/colorSubTitleBlack"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toStartOf="@id/tv_sat_item_month_cal"
+            app:layout_constraintStart_toEndOf="@id/tv_thu_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sat_item_month_cal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="六"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sun_item_month_cal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_fri_item_month_cal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_month_item_month_cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{``+info.month}"
+            android:textColor="@color/colorTextMonthBg"
+            android:textSize="100sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sun_item_month_cal"
+            tools:text="10" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_date_item_month_cal"
+            adapter="@{adapter}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sun_item_month_cal"
+            app:spanCount="7"
+            tools:itemCount="31"
+            tools:listitem="@layout/item_day_calendar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

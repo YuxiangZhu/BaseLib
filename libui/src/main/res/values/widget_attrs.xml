@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--SettingItemView的属性定义配置-->
+    <declare-styleable name="SettingItemView">
+        <attr name="item_icon" format="reference" />
+        <attr name="item_title" format="string" />
+        <attr name="item_tips_num" format="integer" />
+        <attr name="item_content" format="string" />
+        <attr name="item_content_color" format="color" />
+        <attr name="item_show_arrow" format="boolean" />
+    </declare-styleable>
+
+    <!--最大高度RecyclerView的属性定义-->
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="rv_maxHeight" format="dimension" />
+    </declare-styleable>
+</resources>

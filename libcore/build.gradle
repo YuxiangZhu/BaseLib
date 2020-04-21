@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+//jar 的话 'java-library' 并且没有后android闭包
+//依赖库都在dependencies中管理
+apply from: '../dependencies.gradle'
+
+android {
+
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_verion
+        targetSdkVersion target_sdk_version
+        versionCode libCode
+        versionName libVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+}
+
+dependencies {
+
+}

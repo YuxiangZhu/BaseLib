@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loading"
+            type="androidx.databinding.ObservableBoolean" />
+
+        <variable
+            name="msg"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="state"
+            type="androidx.databinding.ObservableInt" />
+    </data>
+
+    <!--自定义dialog inflater之后，根布局的宽高失效，min的还有效-->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_loading_bg"
+        android:minWidth="90dp"
+        android:minHeight="96dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_status_v_dialog"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@{state,default=@drawable/ic_loading_ok}"
+            android:tint="@color/colorWhite"
+            android:visibility="@{loading?View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_msg_v_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading_v_dialog"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@anim/anim_loading"
+            android:indeterminateDuration="1000"
+            android:indeterminateTint="@color/colorWhite"
+            android:progressTint="@color/colorWhite"
+            android:visibility="@{loading?View.VISIBLE:View.INVISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_msg_v_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_msg_v_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@{msg}"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pb_loading_v_dialog"
+            tools:text="正在加载..." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

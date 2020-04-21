@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_title_cal">选择日期</string>
+    <string name="str_progress">%d%%</string>
+
+</resources>
